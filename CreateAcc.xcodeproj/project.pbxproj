@@ -11,9 +11,6 @@
 		A02DBB9D2C52BEF000EDA8E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02DBB9C2C52BEF000EDA8E4 /* ContentView.swift */; };
 		A02DBB9F2C52BEF400EDA8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02DBB9E2C52BEF400EDA8E4 /* Assets.xcassets */; };
 		A02DBBA22C52BEF400EDA8E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02DBBA12C52BEF400EDA8E4 /* Preview Assets.xcassets */; };
-		A02DBBAC2C52BEF500EDA8E4 /* CreateAccTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02DBBAB2C52BEF500EDA8E4 /* CreateAccTests.swift */; };
-		A02DBBB62C52BEF500EDA8E4 /* CreateAccUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02DBBB52C52BEF500EDA8E4 /* CreateAccUITests.swift */; };
-		A02DBBB82C52BEF500EDA8E4 /* CreateAccUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02DBBB72C52BEF500EDA8E4 /* CreateAccUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +37,7 @@
 		A02DBB9E2C52BEF400EDA8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A02DBBA12C52BEF400EDA8E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A02DBBA72C52BEF500EDA8E4 /* CreateAccTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreateAccTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A02DBBAB2C52BEF500EDA8E4 /* CreateAccTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccTests.swift; sourceTree = "<group>"; };
 		A02DBBB12C52BEF500EDA8E4 /* CreateAccUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreateAccUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A02DBBB52C52BEF500EDA8E4 /* CreateAccUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccUITests.swift; sourceTree = "<group>"; };
-		A02DBBB72C52BEF500EDA8E4 /* CreateAccUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				A02DBB992C52BEF000EDA8E4 /* CreateAcc */,
-				A02DBBAA2C52BEF500EDA8E4 /* CreateAccTests */,
-				A02DBBB42C52BEF500EDA8E4 /* CreateAccUITests */,
 				A02DBB982C52BEF000EDA8E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,23 +100,6 @@
 				A02DBBA12C52BEF400EDA8E4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A02DBBAA2C52BEF500EDA8E4 /* CreateAccTests */ = {
-			isa = PBXGroup;
-			children = (
-				A02DBBAB2C52BEF500EDA8E4 /* CreateAccTests.swift */,
-			);
-			path = CreateAccTests;
-			sourceTree = "<group>";
-		};
-		A02DBBB42C52BEF500EDA8E4 /* CreateAccUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A02DBBB52C52BEF500EDA8E4 /* CreateAccUITests.swift */,
-				A02DBBB72C52BEF500EDA8E4 /* CreateAccUITestsLaunchTests.swift */,
-			);
-			path = CreateAccUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A02DBBAC2C52BEF500EDA8E4 /* CreateAccTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A02DBBB82C52BEF500EDA8E4 /* CreateAccUITestsLaunchTests.swift in Sources */,
-				A02DBBB62C52BEF500EDA8E4 /* CreateAccUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +407,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.genwheel.CreateAcc";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.genwheel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -464,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.genwheel.CreateAcc";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.genwheel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
