@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isLoginMode = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            ScrollView {
+                
+                Picker(selection: $isLoginMode, label: 
+                    Text("Picker here")) {
+                    Text("Login")
+                    Text("Create Account")
+                }
+                
+                Text("Here is my creation account page")
+            }
+            .navigationTitle("Create Account")
         }
-        .padding()
     }
 }
 
