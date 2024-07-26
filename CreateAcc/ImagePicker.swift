@@ -1,8 +1,8 @@
 //
 //  ImagePicker.swift
-//  FireBaseApp
+//  CreateAccApp
 //
-//  Created by Abraham May on 7/25/24.
+//  Created by Adam May on 7/25/24.
 //
 
 import SwiftUI
