@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LoginView.swift
 //  CreateAcc
 //
 //  Created by Adam May on 7/25/24.
@@ -13,6 +13,7 @@ class FirebaseManager: NSObject {
     
     let auth: Auth
     let storage: Storage
+    let firestore: Firestore
     
     static let shared = FirebaseManager()
     
@@ -21,6 +22,7 @@ class FirebaseManager: NSObject {
         
         self.auth = Auth.auth()
         self.storage = Storage.storage()
+        self.firestore = Firestore.firestore()
         
         super.init()
     }
@@ -47,7 +49,7 @@ struct LoginView: View {
                         Text("Create Account")
                             .tag(false)
                     }.pickerStyle(SegmentedPickerStyle())
-                        
+                    
                     if !isLoginMode {
                         Button {
                             shouldShowImagePicker.toggle()
@@ -83,7 +85,7 @@ struct LoginView: View {
                         
                         SecureField("Password", text: $password)
                     }.padding(12)
-                     .background(Color.white)
+                        .background(Color.white)
                     
                     Button {
                         handleAction()
@@ -120,11 +122,11 @@ struct LoginView: View {
     
     private func handleAction() {
         if isLoginMode {
-//            print("Should log into Firebase with existing credentials")
+            //            print("Should log into Firebase with existing credentials")
             loginUser()
         } else {
             createNewAccount()
-//            print("Register a new account inside of Firebase Auth and then store image in Storage somehow....")
+            //            print("Register a new account inside of Firebase Auth and then store image in Storage somehow....")
         }
     }
     
@@ -163,7 +165,7 @@ struct LoginView: View {
     }
     
     private func persistImageToStorage() {
-//        let filename = UUID().uuidString
+        //        let filename = UUID().uuidString
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid
         else { return}
         let ref = FirebaseManager.shared.storage.reference(withPath: uid)
@@ -183,8 +185,27 @@ struct LoginView: View {
                 
                 self.loginStatusMessage = "Successfully stored image with url: \(url?.absoluteString ?? "")"
                 print(url?.absoluteString)
+                
+                guard let url = url else { return }
+                storeUserInformation(imageProfileUrl: url)
             }
         }
+    }
+    
+    private func storeUserInformation(imageProfileUrl: URL) {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
+            return }
+        let userData = ["email": self.email, "uid": uid, "profileImageUrl": imageProfileUrl.absoluteString]
+        FirebaseManager.shared.firestore.collection("users")
+            .document(uid).setData(userData) { err in
+                if let err = err {
+                    print(err)
+                    self.loginStatusMessage = "\(err)"
+                    return
+                }
+                
+                print("Success")
+            }
     }
 }
 
